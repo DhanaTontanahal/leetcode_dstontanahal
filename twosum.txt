@@ -1,0 +1,53 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    
+   var map = new Map();
+
+    for(var i = 0 ; i < nums.length ; i++){
+          var difference = target - nums[i];
+     
+          if(map.containsKey(difference)){
+            result[1]=i;
+            result[0]=map.getIndex(difference);
+          }
+          map.put(nums[i],i);
+          
+      }
+  return result;
+};
+
+
+
+function Map(){
+  this.data = new Object();
+  this.keys = new Array();
+
+  this.put = function(key,value){
+    if(this.data[key] == null){
+      this.keys.push(key)
+    }
+    this.data[key] = value;
+  };
+
+  this.get = function(key){
+    return this.data[key];
+  }
+
+  this.containsKey = function(key){
+    return this.keys.includes(key);
+  }
+    
+    this.getIndex = function(value){
+    return this.data[value];
+  }
+}
+
+
+
+
+var result = [];
+

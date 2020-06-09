@@ -1,0 +1,21 @@
+var arr =   [0, 1, 0, 1, 0, 0, 1, 1, 1, 0] ;
+var count = 0;
+arr.map(function(e,i){
+  // console.log(e);
+  if(e == 0 ){
+    count++;
+  }
+})
+var lengthArr = arr.length;
+var segregatedArr = [];
+// console.log(lengthArr);
+for(var i = 0 ; i < lengthArr ; i++){
+    if(i < count){
+      segregatedArr[i]=0;
+    }
+    else
+    {
+      segregatedArr[i]=1
+    }
+}
+console.log(segregatedArr)
