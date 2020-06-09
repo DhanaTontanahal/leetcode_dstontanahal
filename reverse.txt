@@ -1,0 +1,32 @@
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    var reversdNum=0;
+    
+    var integerBound = Math.pow(2,31);
+    var lowerbound = (-1)*integerBound;
+    var upperbound = integerBound-1;
+    
+    
+    x = Number(x);
+    if(x > 0)
+    {
+        reversdNum = Number(String(x).split("").reverse().join(""));
+    }
+    else
+    {
+        var turnPositive = (-1)*x;
+        reversdNum  = Number(String(turnPositive).split("").reverse().join(""));
+        reversdNum = (-1)*reversdNum;
+    }
+    if(x > 0 && reversdNum > upperbound){
+        reversdNum =0;
+    }
+    if(x < 0 && reversdNum < lowerbound){
+        reversdNum = 0;
+    }
+    
+    return reversdNum;
+};
