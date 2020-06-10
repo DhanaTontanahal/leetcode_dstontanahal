@@ -1,0 +1,19 @@
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    
+    var x = Number(x);
+    
+    if(x > 0){
+        return (String(x).split("").reverse().join("") == String(x));
+    }
+    else if(x == 0 || String(x).split("").length == 1){ 
+        return true;
+    }    
+    else {
+        return false;
+    }
+    
+};
