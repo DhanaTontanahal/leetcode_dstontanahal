@@ -1,0 +1,47 @@
+var finalLength=0;
+var goodWordsArray = [];
+var j = 0;
+var countCharacters = function(words, chars) {
+    
+    words.map((word,index)=>{
+        var splitWord = word.split("");
+        // console.log(splitWord);
+        // console.log(chars.split(""));
+    
+        var goodWordConditionNotMEt = false;
+        splitWord.map((e,i)=>{
+          // console.log(splitWord+"<-"+e+"->"+chars.split(""));
+          // console.log(chars.split("").includes(e));
+          if(!chars.split("").includes(e)){
+            goodWordConditionNotMEt=true;
+          }
+           
+        })
+        if(!goodWordConditionNotMEt)
+          goodWordsArray[j++]=splitWord;
+ 
+        
+        
+        //check if the characters inside the arrays are present in chars array
+        //if all characters are present then add this split word to another array
+   
+
+        
+    });
+    goodWordsArray.map((goodWord)=>{
+  // console.log(goodWord.length)
+    finalLength+=goodWord.length
+  // console.log("Length is "+goodWord.split("").length);
+     });
+    return finalLength;
+};
+//  var words = ["cat","bt","hat","tree"], chars = "atach";
+var words= ["hello","world","leetcode"], chars ="welldonehoneyr";
+
+console.log(countCharacters(words,chars));
+
+// console.log(goodWordsArray)
+
+
+
+// console.log(finalLength)
