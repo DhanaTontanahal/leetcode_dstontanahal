@@ -1,0 +1,62 @@
+// Input: ["bella","label","roller"]
+// Output: ["e","l","l"]
+
+var arr =  ["bella","label","roller"];
+// var arr =  ["bella"];
+var outputArr = [];
+getCommonChars(arr);
+function getCommonChars(arr){
+
+  for(var i = 0 ; i < arr.length ; i++){
+
+      var word = arr[i];
+      var charArrayOfWord = word.split("");
+       for(var j = 0 ; j < charArrayOfWord.length ; j++){
+         if(IsPresentInCommonInAllOtherWords(charArrayOfWord[j],arr,i)){
+
+           console.log(charArrayOfWord[j] +" is  present in other words");
+            // getTheOccurancecount();
+          // addToCommonCharsArr(charArrayOfWord[j]);
+        }
+        else{
+          // console.log("continue..."+j);
+          // if(j == 0)
+            // return;
+          // continue;
+        }
+       }
+     
+  }
+}
+
+function IsPresentInCommonInAllOtherWords(char,arrray,indexToSkip){
+  console.log(char);
+  var isPresent = [];
+  var searchInArrray =[...arrray];
+  // console.log(searchInArrray)
+  searchInArrray.splice(indexToSkip,1);
+  console.log(searchInArrray);
+
+  searchInArrray.map(function(searchWord,index){
+    // console.log("need to search =>"+char+" in here==>",searchWord);
+    // console.log(searchWord.split("").includes(char));
+    isPresent[index] = searchWord.split("").includes(char);
+    
+    // console.log(isPresent);
+    // console.log(map.values())
+  
+    
+  })
+  
+
+  let checker = isPresent => isPresent.every(v => v === true);
+  console.log(checker(isPresent));
+  return checker(isPresent)
+}
+
+function addToCommonCharsArr(char){
+  outputArr.push(char);
+  // console.log("addded to common array "+outputArr);
+}
+
+
