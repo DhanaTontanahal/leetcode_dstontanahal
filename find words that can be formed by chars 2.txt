@@ -1,0 +1,42 @@
+var createMap = function(chars) {
+    let helperMap = new Map();
+    
+    for(let char of chars) {
+        if(helperMap.has(char)) {
+            let count = helperMap.get(char) + 1;
+            helperMap.set(char, count);
+        }
+        else {
+            helperMap.set(char, 1);
+        }
+    }
+    return helperMap;
+};
+
+var isGoodWord = function(word, wordMap, chars, charsMap) {
+    if(word.length > chars.length) return false;
+        
+    for(let char of word) {
+        if(wordMap.get(char) <= charsMap.get(char)) continue;
+        else return false;
+    }
+    return true;
+};
+
+
+var countCharacters = function(words, chars) {
+    
+    let sumLength = 0;
+    let charsMap = createMap(chars);
+    
+    for(let word of words) {
+        let wordMap = createMap(word);
+        
+        let foundGoodWord = isGoodWord(word, wordMap, chars, charsMap);
+        
+        if(!foundGoodWord) continue;
+        
+        sumLength += word.length;
+    }
+    return sumLength;
+};
