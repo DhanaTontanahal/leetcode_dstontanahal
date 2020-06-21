@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var smallerNumbersThanCurrent = function(nums) {
+    
+    const createReducer =(checkVal)=>{
+            
+        const countofNumLessThanNum = (acc=0,currentVal)=>{
+                acc =currentVal<checkVal?acc+1:acc;
+            return acc;
+        }
+        
+        return countofNumLessThanNum;
+    }
+    let output = 
+        
+        nums.map((num)=> nums.reduce(createReducer(num),0));
+        
+    return output;
+    
+};

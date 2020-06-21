@@ -1,0 +1,16 @@
+/**
+ * @param {number} n
+ * @param {number} start
+ * @return {number}
+ */
+var xorOperation = function(n, start) {
+    
+ 
+ var bitwiseop=0;
+ for(var i =0 ; i < n ; i++){
+        // console.log(start+2*i);
+        // op.push(start+2*i);
+        bitwiseop=bitwiseop^start+2*i;
+    }
+    return bitwiseop;
+};

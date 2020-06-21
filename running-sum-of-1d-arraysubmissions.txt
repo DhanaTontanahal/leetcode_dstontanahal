@@ -1,0 +1,15 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var runningSum = function(nums) {
+    
+    var sum=0;
+    var runningSum=[];
+    runningSum=nums.map((e)=>{
+        return sum=sum+e;
+    })
+    console.log(runningSum);
+    
+    return runningSum;
+};
