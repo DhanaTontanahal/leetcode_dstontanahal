@@ -1,0 +1,17 @@
+/**
+ * @param {number[]} nums
+https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/ * @return {number[]}
+ */
+var findDisappearedNumbers = function(nums) {
+      // Unique elements array
+    let newArr = [...new Set(nums)];
+   
+    // Full elements array
+    let fullArr = Array.from(new Array(nums.length + 1).keys()).slice(1);
+    
+    return fullArr.filter(item=>{
+        return newArr.indexOf(item) === -1
+    });
+    
+  
+};
