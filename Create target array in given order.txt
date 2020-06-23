@@ -1,0 +1,25 @@
+/**
+ * @param {number[]} nums
+ * @param {number[]} index
+ * @return {number[]}
+ */
+var createTargetArray = function(nums, index) {
+    
+  var numsLength = nums.length;
+  var indexArrLength = index.length;
+
+  if(numsLength > indexArrLength || numsLength < indexArrLength)
+  {
+    return;
+  }    
+
+  var target=[];
+
+  for(var i = 0 ; i < indexArrLength ; i++){
+    var getIndex=index[i];
+    target.splice(getIndex,0,nums[i]);
+  }
+
+return target;
+    
+};

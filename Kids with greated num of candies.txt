@@ -1,0 +1,16 @@
+/**
+ * @param {number[]} candies
+ * @param {number} extraCandies
+ * @return {boolean[]}
+ */
+var kidsWithCandies = function(candies, extraCandies) {
+    
+     const max = Math.max(...candies);
+
+      const ifWay= candies.map((numOfCandsThisCHild)=>{
+          return (numOfCandsThisCHild+extraCandies >= max);
+      });
+    
+    return ifWay;
+    
+};

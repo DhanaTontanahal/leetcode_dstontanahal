@@ -1,0 +1,16 @@
+//1295
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findNumbers = function(nums) {
+    var evenCount=0;
+      for(var i = 0 ; i < nums.length ; i++)
+      {
+        //console.log(nums[i]);
+        //console.log(String(nums[i]).split("").length % 2 == 0)
+        (String(nums[i]).split("").length % 2 == 0) ? evenCount++ : evenCount;
+      }
+      return evenCount;
+};

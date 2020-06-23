@@ -1,0 +1,23 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var decompressRLElist = function(nums) {
+    
+    var result=[];
+    var freq=0;
+    for(var i = 0 ; i < nums.length ; i+=2){
+        
+        freq=nums[i];
+        
+        while(freq > 0){
+            result.push(nums[i+1]);
+            freq--;
+        }
+        
+        
+        
+    }
+    
+    return result;
+};
