@@ -1,0 +1,26 @@
+var arr = [1,2,3,4,5];
+var leftRotateBy = 2;
+
+function leftRotate(arr,leftRotateBy){
+
+  var i =0 ;
+  var rotatedIndex=leftRotateBy;
+  var rotated_arr=[];
+  var size = arr.length;
+  while(rotatedIndex < size){
+    rotated_arr[i]=arr[rotatedIndex];
+    i++;
+    rotatedIndex++;
+  }
+  rotatedIndex=0;
+  while(rotatedIndex < leftRotateBy){
+    rotated_arr[i]=arr[rotatedIndex];
+    i++;
+    rotatedIndex++;
+    
+  }
+  console.log(rotated_arr);
+}
+
+// console.log("hello");
+leftRotate(arr,leftRotateBy);

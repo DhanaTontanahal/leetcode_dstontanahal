@@ -1,0 +1,69 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+// var maxProduct = function(nums) {
+    
+//      var maxProduct=-Infinity;
+//     for(var i = 0 ; i < nums.length ; i++){
+//       for(var j = 0 ; j < nums.length ; j++){
+//         if(i != j)
+//         {
+
+//           const computeMaxProd =((nums[i]-1)*(nums[j]-1));
+          
+//            if(computeMaxProd > maxProduct)
+//            {
+             
+//              maxProduct=computeMaxProd;
+//            } 
+//         }
+          
+//       }
+//     }
+//     return maxProduct;
+    
+    
+    
+// };
+
+// var maxProduct = function(nums) {
+//     let max = -Infinity, nextMax = -Infinity;
+//     for (let i=0; i < nums.length; i++) {
+//         if (nums[i] > max) {
+//             nextMax = max;
+//             max = nums[i];
+//         } else if (nums[i] > nextMax) nextMax = nums[i];
+//     }
+//     return (max-1)*(nextMax-1);
+// };
+
+var maxProduct = function(nums) {
+    let max = -Infinity, nextMax = -Infinity;
+    let i = 0
+    for (i; i < nums.length; i++) {
+        if (nums[i] > max) {
+            nextMax = max;
+            max = nums[i];
+        } else if (nums[i] > nextMax) nextMax = nums[i];
+    }
+    return (max-1)*(nextMax-1);
+};
+
+
+
+// var maxProduct = function(nums) {
+//     let max = -Infinity, nextMax = -Infinity;
+//     let i = 0
+//     while(i < nums.length){
+//        if (nums[i] > max) {
+//             nextMax = max;
+//             max = nums[i];
+//         } else if (nums[i] > nextMax) nextMax = nums[i];
+//       i++;
+//     }
+//     return (max-1)*(nextMax-1);
+// };
+
+
+
